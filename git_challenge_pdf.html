@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Challenge Documentation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #4a90e2;
+        }
+        
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin: 0;
+            font-weight: 300;
+        }
+        
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.1em;
+            margin: 10px 0 0 0;
+        }
+        
+        .task-section {
+            margin: 30px 0;
+            padding: 25px;
+            background: #f8f9fa;
+            border-left: 5px solid #4a90e2;
+            border-radius: 8px;
+            transition: transform 0.2s ease;
+        }
+        
+        .task-section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .task-title {
+            color: #2c3e50;
+            font-size: 1.4em;
+            font-weight: 600;
+            margin: 0 0 15px 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .task-number {
+            background: #4a90e2;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .task-steps {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .task-steps li {
+            margin: 10px 0;
+            padding: 12px 15px;
+            background: white;
+            border-radius: 6px;
+            border-left: 3px solid #e74c3c;
+            position: relative;
+            padding-left: 40px;
+        }
+        
+        .task-steps li::before {
+            content: counter(step-counter);
+            counter-increment: step-counter;
+            position: absolute;
+            left: 15px;
+            top: 12px;
+            background: #e74c3c;
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+        
+        .task-section {
+            counter-reset: step-counter;
+        }
+        
+        .code {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        
+        .special-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-left: 5px solid #5a67d8;
+        }
+        
+        .special-section .task-title {
+            color: white;
+        }
+        
+        .special-section .task-steps li {
+            background: rgba(255,255,255,0.1);
+            border-left: 3px solid #ffd700;
+            color: white;
+        }
+        
+        .special-section .task-steps li::before {
+            background: #ffd700;
+            color: #333;
+        }
+        
+        .special-section .code {
+            background: rgba(0,0,0,0.3);
+            color: #ffd700;
+        }
+        
+        .commands-box {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .commands-title {
+            color: #ffd700;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #ecf0f1;
+            color: #7f8c8d;
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            .task-section:hover {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Git Challenge Documentation</h1>
+            <p>Progressive Git Learning Exercise - 5 Levels of Mastery</p>
+        </div>
+
+        <div class="task-section">
+            <div class="task-title">
+                <div class="task-number">1</div>
+                I Can Win
+            </div>
+            <ol class="task-steps">
+                <li>Install git and generate a pair of SSH keys. Authorize the public key on <span class="code">github.com</span>.</li>
+                <li>Specify your <span class="code">user.name</span> and <span class="code">user.email</span> in git configuration.</li>
+                <li>Create a new repository on <span class="code">github.com</span> and clone it locally to your computer.</li>
+                <li>Create a file called <span class="code">song.txt</span> and put there half the text of your favorite song.</li>
+                <li>Make a commit called <em>"add first half of my favorite song"</em> and send it to the server.</li>
+                <li>Make sure GitHub has a <span class="code">song.txt</span> file with the lyrics.</li>
+                <li>Using GitHub's web interface, add the second half of the lyrics and make a commit with the name <em>"finish my song"</em>.</li>
+                <li>Make a pull in the local repository and make sure that the commit you created on GitHub is pulled up and you have all the lyrics.</li>
+            </ol>
+        </div>
+
+        <div class="task-section">
+            <div class="task-title">
+                <div class="task-number">2</div>
+                Bring It On
+            </div>
+            <p><strong>Prerequisites:</strong> This task is performed immediately after the previous one (I Can Win).</p>
+            <ol class="task-steps">
+                <li>Add a <span class="code">.gitignore</span> file to the project and configure it to hide files with extensions <span class="code">.db</span>, <span class="code">.log</span> and directories named <span class="code">target</span> or <span class="code">bin</span>.</li>
+                <li>Create a feature branch and add two commits to it.</li>
+                <li>Merge the feature branch into master.</li>
+                <li>Return to feature branch and create the <span class="code">arrows.txt</span> file with the following contents:<br><em>"The ship glides gently on the waves<br>As day turns into night"</em><br>Make a commit.</li>
+                <li>Go to master. Create the <span class="code">arrows.txt</span> file there and add the following text:<br><em>"One thousand burning arrows<br>Fill the starlit sky"</em><br>Make a commit.</li>
+                <li>Merge feature into master resolving the conflict: save all 4 lines in <span class="code">arrows.txt</span> file in the order they were added in steps 4 and 5.</li>
+            </ol>
+        </div>
+
+        <div class="task-section">
+            <div class="task-title">
+                <div class="task-number">3</div>
+                Hurt Me Plenty
+            </div>
+            <p><strong>Prerequisites:</strong> This task is performed after the previous one (Bring It On).</p>
+            <ol class="task-steps">
+                <li>Create a <span class="code">storm</span> branch and add a commit to the <span class="code">storm.txt</span> file:<br><em>"Twenty ships with Norsemen braves<br>Riding the northern wind"</em></li>
+                <li>Add 2 more lines to <span class="code">storm.txt</span> and make another commit:<br><em>"They left their shores at early dawn<br>As a red sun was rising in the east"</em></li>
+                <li>Return to master and create the <span class="code">pursuit.txt</span> file with the text:<br><em>"The warming sun returns again<br>And melts away the snow<br>The sea is freed from icy chains<br>Winter is letting go"</em><br>Make a commit.</li>
+                <li>Mark the commit with <span class="code">session1</span> tag and go to the storm branch.</li>
+                <li>Rebase the storm branch so that it contains the last commit from the master.</li>
+            </ol>
+        </div>
+
+        <div class="task-section">
+            <div class="task-title">
+                <div class="task-number">4</div>
+                Hardcore
+            </div>
+            <p><strong>Prerequisites:</strong> This task is carried out immediately after the previous one (Hurt Me Plenty).</p>
+            <ol class="task-steps">
+                <li>Make a push of your repository and make sure all commits are on GitHub.</li>
+                <li>Make a new repository on GitHub.</li>
+                <li>Change the remote repository in the local one so that fetch and push come to the new repository that was created in the previous step.</li>
+                <li>Make a push and make sure that the second repository on GitHub looks the same as the first.</li>
+                <li>Return the remote settings to their initial state: pull and push of the first local repository lead to one remote repository on GitHub.</li>
+            </ol>
+        </div>
+
+        <div class="task-section special-section">
+            <div class="task-title">
+                <div class="task-number">5</div>
+                Nightmare! (Command Line Only)
+            </div>
+            <p><strong>Ultimate Challenge:</strong> To complete this task, you will need to repeat all 4 previous tasks using only the MINGW64 command line (in which git works).</p>
+            
+            <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 8px; margin: 15px 0;">
+                <strong>Restrictions:</strong>
+                <ul style="margin: 10px 0; padding-left: 20px;">
+                    <li>Cannot use file managers</li>
+                    <li>Cannot use GUI text editors</li>
+                    <li>Cannot use gitk / git gui</li>
+                    <li>Browser allowed only for GitHub operations</li>
+                    <li>Everything else must be done through console only</li>
+                </ul>
+            </div>
+
+            <div class="commands-box">
+                <div class="commands-title">Essential Commands for Console-Only Operations:</div>
+                <div><strong>echo</strong> - Output text to console or redirect to files</div>
+                <div><strong>cd</strong> - Change directory navigation</div>
+                <div><strong>cat</strong> - Display file contents</div>
+                <div><strong>vi</strong> - Command-line text editor</div>
+            </div>
+
+            <p style="margin-top: 20px;"><strong>Note:</strong> This is the most difficult task in this course, requiring complete mastery of command-line operations and Git workflow without any graphical assistance.</p>
+        </div>
+
+        <div class="footer">
+            <p><strong>Git Challenge Complete!</strong><br>
+            From basic repository setup to advanced command-line mastery<br>
+            <em>Document generated on June 20, 2025</em></p>
+        </div>
+    </div>
+
+    <script>
+        // Add print functionality
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'p') {
+                window.print();
+            }
+        });
+    </script>
+</body>
+</html>
